@@ -21,7 +21,7 @@
 			</td>
 			<td width="1%">&nbsp;</td>
 			<td width="4%">
-				<a href="#" class="header_link"><span class="header_menu">JOIN</span></a>
+				<a href="join" class="header_link"><span class="header_menu">JOIN</span></a>
 			</td>
 			<td width="1%">&nbsp;</td>
 			<td width="4%">

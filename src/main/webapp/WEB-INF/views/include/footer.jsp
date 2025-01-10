@@ -13,13 +13,13 @@
 		<tr height="30">
 			<td>&nbsp;</td>
 		</tr>
-		<tr class="footer_line" height="30" alingn="center">
-			<td width="4%">
+		<tr class="footer_line" height="30">
+			<td width="4%"  alingn="center">
 				<span class="footer_text">Copyright 2024 ⓒ JeongWoo. All Rights Reserved</span></a>
 			</td>
 		</tr>
-		<tr class="footer_line" height="30" alingn="center">
-			<td width="4%">
+		<tr class="footer_line" height="30">
+			<td width="4%" alingn="center">
 				<span class="footer_text">This homepage is built with Springboot Framework. Made by GyojinLee. E-Mail:jeongwoo70@gmail.com</span></a>
 			</td>
 		</tr>
