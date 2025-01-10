@@ -8,16 +8,18 @@
 <title>Profile Web</title>
 </head>
 <body>
+	<%@ include file="include/header.jsp" %>
+	<center>
 	<table border="0" cellpadding="20" cellspacing="0">
 		<tr>
 			<td align="center">
-				<span class="title_text01">DEVELOPER GYOJIN's PROFILE</span>
+				<span class="title_text01">JEON JEONGWOO'S PROFILE</span>
 			</td>
 			
 		</tr>
 		<tr>
 			<td align="center">
-				<span class="title_text02">I'm Gyojin Lee, a developer who wants a development job. Please call me back.</span>
+				<span class="title_text02">저는 중학생, 고등학생의 수학을 27년간 가르친 강사입니다.</span>
 			</td>
 			
 		</tr>
@@ -25,35 +27,35 @@
 			<td align="center">
 				<table border="0" cellpadding="10" cellspacing="0">
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">AVA</span>
 						</td>
 						<td rowspan="6">
-							<img src="../resources/img/springboot.jpg">
+							<img src="../resources/img/springboot.jpg" >
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">SP</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">S</span><span class="skill_text02">PRINGBOOT</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">J</span><span class="skill_text02">AVASCRIPT</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">H</span><span class="skill_text02">TML5&CSS</span>
 						</td>
 					</tr>
 					<tr>
-						<td>
+						<td class="skill_box">
 							<span class="skill_text01">D</span><span class="skill_text02">ATABASE</span>
 						</td>
 					</tr>
@@ -61,5 +63,8 @@
 			</td>
 		</tr>
 	</table>
+	</center>
+	
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>

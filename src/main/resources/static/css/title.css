@@ -31,3 +31,13 @@ span.skill_text02 {
 	font-family: Arial;
 	font-weight: bold;
 }
+
+td.skill_box {
+	background-color:#006A67;
+	
+}
+
+td.image_box {
+	background-color:#fff4b7;
+	
+}
