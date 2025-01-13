@@ -17,8 +17,30 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping(value="/join")
+	@GetMapping(value = "/join")
 	public String join() {
 		return "join";
 	}
+	
+	@GetMapping(value = "/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping(value = "/profile")
+	public String profile() {
+		return "profile";
+	}
+	
+	@GetMapping(value = "/contact")
+	public String contact() {
+		return "contact";
+	}
+	
+	@GetMapping(value = "/board")
+	public String board() {
+		return "board";
+	}
+	
+	
 }

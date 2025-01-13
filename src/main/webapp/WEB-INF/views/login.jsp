@@ -6,9 +6,8 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/css/title.css">
 <link rel="stylesheet" href="../resources/css/content.css">
-<script type="" href="../resources/css/content.css">
 
-<title>JOIN</title>
+<title>LOGIN</title>
 </head>
 <body>
 	<%@ includ file="include/header.jsp" %>
@@ -29,9 +28,15 @@
 		<tr>
 			<td align="center" height="500">
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
-				<form action="joinOk" method="post" name="joinForm">
+				<form action="loginOk" method="post" name="loginForm">
 					<tr>
-						<td>&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
 					</tr>
 					<tr>
 						<td align="right" width="40%">
@@ -48,40 +53,18 @@
 						<td>
 							<input type="password" name="mpw" class="input_box">
 						</td>
+					</tr>					
+					<tr>
+						<td colspan="2">&nbsp;</td>
 					</tr>
 					<tr>
-						<td align="right">
-							<span class="content_text">비밀번호 확인 :</span>
-						</td>
-						<td>
-							<input type="password" name="mpw_check" class="input_box">
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<span class="content_text">회원이름 :</span>
-						</td>
-						<td>
-							<input type="text" name="mname" class="input_box">
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<span class="content_text">이메일 :</span>
-						</td>
-						<td>
-							<input type="text" name="memail" class="input_box">
-						</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
 					</tr>
 					<tr>						
 						<td colspan="2" align="center">
-							<input type="submit" value="회원가입" class="content_btn" >
+							<input type="submit" value="회원가입" class="content_btn">
 							<input type="button" value="로그인" class="content_btn">
-						</td>
-						
+						</td>						
 					</tr>
 				</form>
 				</table>

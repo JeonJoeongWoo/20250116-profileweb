@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <link rel="stylesheet" href="../resources/css/footer.css">
+
 <title>FOOTER</title>
 </head>
 <body>
@@ -13,14 +15,14 @@
 		<tr height="30">
 			<td>&nbsp;</td>
 		</tr>
-		<tr class="footer_line" height="30">
-			<td width="4%"  alingn="center">
-				<span class="footer_text">Copyright 2024 ⓒ JeongWoo. All Rights Reserved</span></a>
+		<tr class="footer_line" height="30" align="center">
+			<td>
+				<span class="footer_text">2025년 1월 10일 전정우.만들기 시작^^</span>
 			</td>
 		</tr>
-		<tr class="footer_line" height="30">
-			<td width="4%" alingn="center">
-				<span class="footer_text">This homepage is built with Springboot Framework. Made by GyojinLee. E-Mail:jeongwoo70@gmail.com</span></a>
+		<tr class="footer_line" height="30" align="center">
+			<td>
+				<span class="footer_text">이 홈페이지는 Springboot Framework로 만듦.  E-Mail:jeongwoo70@gmail.com</span>
 			</td>
 		</tr>
 	</table>

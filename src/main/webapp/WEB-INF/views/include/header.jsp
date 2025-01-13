@@ -10,35 +10,51 @@
 <body>
 
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
-		<tr class="header_line" height="60" alingn="center">
-			<td width="55%">&nbsp;</td>
+		<tr class="header_line" height="60" align="center">
+			<td width="55%">
+				&nbsp;
+			</td>
 			<td width="4%">
 				<a href="index" class="header_link"><span class="header_menu">HOME</span></a>
 			</td>
-			<td width="1%">&nbsp;</td>
-			<td width="4%">
-				<a href="#" class="header_link"><span class="header_menu">LOGIN</span></a>
+			<td width="1%">
+				&nbsp;
 			</td>
-			<td width="1%">&nbsp;</td>
+			<td width="4%">
+				<a href="login" class="header_link"><span class="header_menu">LOGIN</span></a>
+			</td>
+			<td width="1%">
+				&nbsp;
+			</td>
 			<td width="4%">
 				<a href="join" class="header_link"><span class="header_menu">JOIN</span></a>
 			</td>
-			<td width="1%">&nbsp;</td>
-			<td width="4%">
-				<a href="#" class="header_link"><span class="header_menu">PROFILE</span></a>
+			<td width="1%">
+				&nbsp;
 			</td>
-			<td width="1%">&nbsp;</td>
 			<td width="4%">
-				<a href="#" class="header_link"><span class="header_menu">BOARD</span></a>
+				<a href="profile" class="header_link"><span class="header_menu">PROFILE</span></a>
 			</td>
-			<td width="1%">&nbsp;</td>
+			<td width="1%">
+				&nbsp;
+			</td>
 			<td width="4%">
-				<a href="#" class="header_link"><span class="header_menu">CONTANT</span></a>
+				<a href="board" class="header_link"><span class="header_menu">BOARD</span></a>
 			</td>
-			<td width="1%">&nbsp;</td>
+			<td width="1%">
+				&nbsp;
+			</td>
+			<td width="4%">
+				<a href="contact" class="header_link"><span class="header_menu">CONTACT</span></a>
+			</td>
+			<td width="3%">
+				&nbsp;
+			</td>
 		</tr>
 		<tr height="20">
-			<td>&nbsp;</td>
+			<td>
+				&nbsp;
+			</td>
 		</tr>
 	</table>
 </body>
