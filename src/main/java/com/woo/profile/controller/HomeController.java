@@ -1,10 +1,16 @@
 package com.woo.profile.controller;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	private SqlSession sqlSession;
 	
 	@GetMapping(value = "/")
 	public String root() {
@@ -37,9 +43,9 @@ public class HomeController {
 		return "contact";
 	}
 	
-	@GetMapping(value = "/board")
-	public String board() {
-		return "board";
+	@GetMapping(value = "/sessionTest")
+	public String sessionTest() {
+		return "sessionTest";
 	}
 	
 	

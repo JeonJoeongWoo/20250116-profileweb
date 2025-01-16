@@ -10,21 +10,21 @@
 <body>
 	<%@ include file="include/header.jsp" %>
 	
-		<table border="0" cellpadding="20" cellspacing="0">
-			<tr>
-				<td align="center">
-					<span class="title_text01">JEON JEONGWOO'S PROFILE</span>
-				</td>
-				
-			</tr>
-			<tr>
-				<td align="center">
-					<span class="title_text02">저는 중학생, 고등학생의 수학을 27년간 가르친 강사입니다.</span>
-				</td>
-				
-			</tr>
-			<tr>
-				<td align="center">
+	<table border="0" cellpadding="20" cellspacing="0" width="100%">
+		<tr>
+			<td align="center">
+				<span class="title_text01">전정우의 소개</span>
+			</td>
+			
+		</tr>
+		<tr>
+			<td align="center">
+				<span class="title_text02">저는 27년간 중학생과 고등학생의 수학을 가르치고 있습니다.</span>
+			</td>
+			
+		</tr>
+		<tr>
+			<td align="center">
 				<table border="0" cellpadding="10" cellspacing="0" width="55%">
 					<tr>
 						<td class="skill_box">
@@ -60,9 +60,10 @@
 						</td>
 					</tr>
 				</table>
-				</td>
-			</tr>
-		</table>
+			</td>
+		</tr>
+	</table>
+	
 	
 	<%@ include file="include/footer.jsp" %>
 </body>

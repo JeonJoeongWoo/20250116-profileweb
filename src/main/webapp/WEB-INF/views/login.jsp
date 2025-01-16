@@ -6,37 +6,43 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/css/title.css">
 <link rel="stylesheet" href="../resources/css/content.css">
-
-<title>LOGIN</title>
+<script type="text/javascript" src="../resources/js/login.js"></script>
+<title>Profile Web</title>
 </head>
 <body>
-	<%@ includ file="include/header.jsp" %>
-
-	<table border="0" cellpadding="10" cellspacing="0">
+	<%@ include file="include/header.jsp" %>
+	
+	<table border="0" cellpadding="20" cellspacing="0" width="100%">
 		<tr>
 			<td align="center">
-				<span class="title_text01">JEON JEONGWOO'S PROFILE</span>
+				<span class="title_text01">전정우의 소개</span>
 			</td>
 			
 		</tr>
 		<tr>
 			<td align="center">
-				<span class="title_text02">저는 중학생, 고등학생의 수학을 27년간 가르친 강사입니다.</span>
+				<span class="title_text02">저는 27년간 중학생과 고등학생의 수학을 가르치고 있습니다.</span>
 			</td>
 			
 		</tr>
 		<tr>
 			<td align="center" height="500">
 				<table border="0" cellpadding="10" cellspacing="0" width="60%" class="content_box" height="530">
-				<form action="loginOk" method="post" name="loginForm">
+				<form action="loginOk" method="post" name="loginForm" onsubmit="return loginCheck()">
 					<tr>
-						<td colspan="2">&nbsp;</td>
+						<td colspan="2">
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-						<td colspan="2">&nbsp;</td>
+						<td colspan="2">
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-						<td colspan="2">&nbsp;</td>
+						<td colspan="2">
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
 						<td align="right" width="40%">
@@ -55,15 +61,19 @@
 						</td>
 					</tr>					
 					<tr>
-						<td colspan="2">&nbsp;</td>
+						<td colspan="2">
+							&nbsp;
+						</td>
 					</tr>
 					<tr>
-						<td colspan="2">&nbsp;</td>
+						<td colspan="2">
+							&nbsp;
+						</td>
 					</tr>
 					<tr>						
 						<td colspan="2" align="center">
-							<input type="submit" value="회원가입" class="content_btn">
-							<input type="button" value="로그인" class="content_btn">
+							<input type="submit" value="로그인" class="content_btn">
+							<input type="button" value="회원가입" class="content_btn" onclick="javascript:location.href='join'">
 						</td>						
 					</tr>
 				</form>
@@ -71,6 +81,7 @@
 			</td>
 		</tr>
 	</table>
+	
 	
 	<%@ include file="include/footer.jsp" %>
 </body>

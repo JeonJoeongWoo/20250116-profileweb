@@ -16,11 +16,21 @@ input.input_box {
 	border: 1px solid #000B58;
 	width: 250px;
 	font-size: 20px;
+	font-family: NanumGothic, Arial;
+	padding: 5px;
+}
+
+input.input_box_noedit {
+	border: 0px solid #000B58;
+	background-color: #e3fdff;
+	width: 250px;
+	font-size: 20px;
 	font-family: Arial;
 	padding: 5px;
 }
 
 input.content_btn {
+	font-family: NanumGothic;
 	border: 2px solid #000B58;
 	width: 150px;
 	height: 50px;
@@ -32,11 +42,34 @@ input.content_btn {
 
 input.content_btn:hover {
 	border: 2px solid #000B58;
+	font-family: NanumGothic;
 	width: 150px;
 	height: 50px;
 	background-color: #0683ff;
 	font-size: 20px;
 	color: #FFFFFF;
 	padding: 10px;
+	cursor: pointer;
+}
+
+input.check_btn {
+	border: 1px solid #000B58;
+	width: 100px;
+	height: 35px;
+	background-color: #003161;
+	font-size: 15px;
+	color: #FFFFFF;
+	padding:5px;
+}
+
+input.check_btn:hover {
+	border: 1px solid #000B58;
+	font-family: NanumGothic;
+	width: 100px;
+	height: 35px;
+	background-color: #0683ff;
+	font-size: 15px;
+	color: #FFFFFF;
+	padding:5px;
 	cursor: pointer;
 }
