@@ -46,9 +46,9 @@
 					<tr>
 						<td align="center">
 							<span class="content_text">
-								안녕하세요 Web Application 백엔드 개발자 이교진입니다.<br>
+								안녕하세요 전정우입니다.<br>
 								보시고 계신 페이지는 SpringBoot Framework으로 개발되었습니다.<br>
-								웹 어플리케이션 개발 관련하여 궁금하신 점은 luckyred@gmail.com을 이용해주세요.
+								
 							</span>
 						</td>						
 					</tr>								

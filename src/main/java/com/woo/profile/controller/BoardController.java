@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.woo.profile.Dao.BoardDao;
 import com.woo.profile.Dao.MemberDao;
 import com.woo.profile.Dto.BoardDto;
+import com.woo.profile.Dto.Criteria;
 import com.woo.profile.Dto.MemberDto;
+import com.woo.profile.Dto.PageDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -61,9 +63,18 @@ public class BoardController {
 	}
 	
 	@GetMapping(value = "/list")
-	public String board(HttpServletRequest request, Model model) {
+	public String board(HttpServletRequest request, Model model, Criteria criteria) {
 		
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		
+		String pageNum = request.getParameter("pageNum");//사용자가 클릭한 게시판 페이지 번호(ex:3페이지)
+		
+		criteria.setPageNum(Integer.parseInt(pageNum));
+		//사용자가 클릭한 페이지 번호를 criteria 객체 내의 멤버변수인 pageNum 값으로 설정
+		int total = bDao.totalBoardCountDao();//게시판 내 모든 글의 갯수
+		
+		PageDto pageDto = new PageDto(total, criteria);
+		
 		ArrayList<BoardDto> bDtos = bDao.listDao();//모든 글 가져오기
 		
 		model.addAttribute("bDtos", bDtos);
@@ -83,6 +94,7 @@ public class BoardController {
 		
 		return "contentView";
 	}
+	
 	@GetMapping(value = "/contentModify")
 	public String contentModify(HttpServletRequest request, Model model, HttpSession session) {
 		
@@ -103,11 +115,8 @@ public class BoardController {
 			model.addAttribute("msg", "글을 작성한 사용자만 수정 권한이 있습니다.");
 			
 			return "alert/alert2";
-		}
-		
-		
+		}		
 	}
-	
 	
 	@PostMapping(value = "/contentModifyOk")
 	public String contentModifyOk(HttpServletRequest request, Model model) {
@@ -121,4 +130,33 @@ public class BoardController {
 		
 		return "redirect:list";
 	}
+	
+	@GetMapping(value = "/contentDelete")
+	public String contentDelete(HttpServletRequest request, Model model, HttpSession session) {
+		
+		String bnum = request.getParameter("bnum");//삭제할 글의 번호
+		
+		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		BoardDto bDto = bDao.contentViewDao(bnum);//해당 글 번호의 모든 정보 가져오기
+		
+		String sid = (String) session.getAttribute("sessionid");//현재 로그인한 사용자의 아이디		
+		
+		if(sid.equals(bDto.getBid())) {//현재 로그인한 사용자 아이디와 글쓴사용자의 아이디 비교			
+			if(bDao.contentDeleteDao(bnum) == 1) {//참이면 삭제 성공
+				model.addAttribute("msg", "글이 성공적으로 삭제되었습니다.");
+				model.addAttribute("url", "list");
+				
+				return "alert/alert";
+			} else {
+				model.addAttribute("msg", "글 삭제가 실패하였습니다.");
+				model.addAttribute("url", "list");
+				
+				return "alert/alert";//삭제 실패시 리스트로 돌아가기
+			}
+		} else {
+			model.addAttribute("msg", "해당 글의 삭제 권한이 없습니다.");			
+			return "alert/alert2";
+		}
+	}
+	
 }
