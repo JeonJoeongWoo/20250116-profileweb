@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <!DOCTYPE html>
@@ -44,7 +43,7 @@
 						<td class="board_content_td" align="center">${bDto.bid}</td>
 						<td class="board_content_td" align="center">${bDto.bname}</td>
 						<td class="board_content_td">
-							<a class="board_link" href="contentView?bnum=${bDto.bnum }">
+							<a class="board_link" href="contentView?pageNum=${currentPage} & bnum=${bDto.bnum}">
 							<c:choose>
 								<c:when test="${fn:length(bDto.btitle) > 38}">
 									${fn:substring(bDto.btitle, 0, 38)}...
@@ -66,11 +65,37 @@
 						<td colspan="6">&nbsp;</td>
 					</tr>
 					
+					<tr height="10">
+						<td></td>
+					</tr>
 					<!-- 페이징 페이지 표시 -->
 					<tr>
-						<td colspan="6">
-							◀◀ ◀ 1 <a href="list?pageNum=2">2</a> <a href="list?pageNum=3">3</a> 4 5 6 7 8 9 10 ▶ ▶
-						
+						<td colspan="6" align="center">
+							<c:if test="${pageDto.prev}">
+							<a href="list?pageNum=1" class="pagehref"><span class="pagelink">≪</span></a>&nbsp;
+							<a href="list?pageNum=${pageDto.startPage-1}" class="pagehref"><span class="pagelink">＜</span></a>
+							</c:if>
+							&nbsp;&nbsp;
+							
+							<c:forEach var="pageNumber" begin="${pageDto.startPage}" end="${pageDto.endPage}">
+								<c:choose>
+									<c:when test="${currentPage == pageNumber}">
+										<span class="currPagelink">${pageNumber}</span>
+										&nbsp;
+									</c:when>
+									<c:otherwise>
+										<a href="list?pageNum=${pageNumber}" class="pagehref"> <span class="pagelink">${pageNumber}</span> </a> &nbsp;
+									</c:otherwise>
+								</c:choose>
+								 
+							</c:forEach>
+							
+							
+							&nbsp;&nbsp;
+							<c:if test="${pageDto.next}">
+							<a href="list?pageNum=${pageDto.endPage+1}" class="pagehref"><span class="pagelink">＞</span></a>&nbsp;
+							<a href="list?pageNum=${pageDto.realEndPage}" class="pagehref"><span class="pagelink">≫</span></a>
+							</c:if>
 						</td>
 					
 					</tr>

@@ -75,3 +75,36 @@ a.board_link:hover {
 	font-weight: bold;
 	color: inherit;
 }
+
+span.pagelink {
+	font-family: NanumGothic, Arial;
+	border: 1px solid #000B58;
+	background: #e3fdff;
+	color: #808080;
+	font-size: 20px;
+	padding: 8px;
+	
+}
+
+span.currPagelink {
+	font-family: NanumGothic, Arial;
+	border: 1px solid #b0cff2;
+	background: #4aa4ec;
+	color: #ffffff;
+	font-size:20px;
+	padding: 8px;
+}
+
+a.pagehref:link {
+	text-decoration: none;
+	font-family: NanumGothic, Arial;
+	color: inherit;
+	
+}
+
+a.pagehref:visted {
+	text-decoration: none;
+	font-family: NanumGothic, Arial;
+	color: inherit;
+	
+}

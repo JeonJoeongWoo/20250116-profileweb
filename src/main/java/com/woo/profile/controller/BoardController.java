@@ -69,15 +69,23 @@ public class BoardController {
 		
 		String pageNum = request.getParameter("pageNum");//사용자가 클릭한 게시판 페이지 번호(ex:3페이지)
 		
-		criteria.setPageNum(Integer.parseInt(pageNum));
-		//사용자가 클릭한 페이지 번호를 criteria 객체 내의 멤버변수인 pageNum 값으로 설정
+		if(pageNum != null) {		//리스트요청이 오면 pageNum은 null이다.
+			criteria.setPageNum(Integer.parseInt(pageNum));
+			//사용자가 클릭한 페이지 번호를 criteria 객체 내의 멤버변수인 pageNum 값으로 설정
+		}
+		
 		int total = bDao.totalBoardCountDao();//게시판 내 모든 글의 갯수
 		
 		PageDto pageDto = new PageDto(total, criteria);
 		
-		ArrayList<BoardDto> bDtos = bDao.listDao();//모든 글 가져오기
+		int realEndPage = (int) Math.ceil(total*1.0/criteria.getAmount());		//실제 마지막 페이지
+		
+		ArrayList<BoardDto> bDtos = bDao.listDao(criteria.getAmount(), criteria.getPageNum());
+		//인수로 한페이제 보여질 글의 갯수와 사용자가 클릭한 페이지의 번호를 입력해서 호출
 		
 		model.addAttribute("bDtos", bDtos);
+		model.addAttribute("pageDto", pageDto);
+		model.addAttribute("currentPage", criteria.getPageNum());
 		
 		return "board";
 	}
@@ -86,12 +94,16 @@ public class BoardController {
 	public String contentView(HttpServletRequest request, Model model) {
 		
 		String bnum = request.getParameter("bnum");//사용자가 클릭한 글의 번호
+		String currPage = request.getParameter("pageNum");//
 		
 		BoardDao bDao = sqlSession.getMapper(BoardDao.class);
+		bDao.updateHitDao(bnum);		//조회수 1증가
+		
 		BoardDto bDto = bDao.contentViewDao(bnum);
 		
 		model.addAttribute("bDto", bDto);
-		
+		model.addAttribute("currPage", currPage);
+				
 		return "contentView";
 	}
 	
@@ -158,5 +170,11 @@ public class BoardController {
 			return "alert/alert2";
 		}
 	}
+	
+//	@GetMapping(value="/confirm")
+//	public String confirm() {
+//		
+//		return "aleter/confirm";
+//	}
 	
 }
